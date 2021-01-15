@@ -34,7 +34,7 @@ krb5/src/configure: krb5/src/Makefile.in
 	cd $(dir $^) && autoreconf
 
 krb5/src/Makefile: krb5/src/configure
-	cd $(dir $^) && ./configure --prefix=$(INST) --runstatedir=$(VAR)/run && $(MAKE) -s && $(MAKE) -j1 -s install
+	cd $(dir $^) && ./configure --prefix=$(INST) && $(MAKE) -s && $(MAKE) -j1 -s install
 
 # Compile a KRB5 KDC and put it in $INST
 .NOTPARALLEL: build
