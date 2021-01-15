@@ -71,7 +71,7 @@ $(KRB5CONF):
 	echo "  default_realm = $(REALM)" >> $@
 	echo "[realms]" >> $@
 	echo "  $(REALM) = {" >> $@
-	echo "    kdc = localhost:1088" >> $@
+	echo "    kdc = localhost:10088" >> $@
 	echo "    admin_server = localhost:10750" >> $@
 	echo "  }" >> $@
 
