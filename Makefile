@@ -102,7 +102,7 @@ $(LOG): $(KADMIN) $(STASH) $(KDCCONF)
 	/bin/echo -e "$(PASS)\n$(PASS)" | $< -r $(REALM) -p $(ADMIN)@$(REALM) -q "addprinc -policy users $(USER2)" >> $@ && \
 	$(KADMIN) -r $(REALM) -p $(ADMIN)@$(REALM) -q "addprinc -randkey -policy hosts host/${HOSTNAME}" >> $@ && \
 	$(KADMIN) -r $(REALM) -p $(ADMIN)@$(REALM) -q "ktadd -k $(ETC)/krb5.keytab host/$(HOSTNAME)" >> $@
-	$(KADMIN) -r $(REALM) -p $(ADMIN)@$(REALM) -q "addprinc -randkey -policy ${SERVICE}/${HOSTNAME}" >> $@ && \
+	$(KADMIN) -r $(REALM) -p $(ADMIN)@$(REALM) -q "addprinc -randkey ${SERVICE}/${HOSTNAME}" >> $@ && \
 	$(KADMIN) -r $(REALM) -p $(ADMIN)@$(REALM) -q "ktadd -k $(ETC)/krb5.keytab ${SERVICE}/$(HOSTNAME)" >> $@
 
 # Start the KDC service
