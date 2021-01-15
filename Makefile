@@ -1,5 +1,5 @@
 HOSTNAME=server.foo.bar
-SERVICE=myservice # Change this to your service name
+SERVICE=myservice
 INST=$(shell pwd)/krb5inst
 SBIN=$(INST)/sbin
 ETC=$(INST)/etc
@@ -18,9 +18,9 @@ HOSTKEYTAB=$(ETC)/krb5.keytab
 SERVICEKEYTAB=$(ETC)/$(SERVICE).keytab
 REALM=FOO.BAR
 ADMIN=admin/admin
-USER1=knoll # Change this to whatever you want to use as login
+USER1=knoll
 USER2=tott
-PASS=qwer123 # Change this to whaterver you want to use as pw
+PASS=qwer123
 LIBS=$(INST)/lib
 
 all: $(LOG)
